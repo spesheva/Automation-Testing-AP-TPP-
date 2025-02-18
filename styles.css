@@ -1,0 +1,42 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+header {
+  background-color: aquamarine;
+}
+header nav {
+  text-align: center;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  text-decoration-color: blueviolet;
+}
+main h1 {
+  text-align: center;
+}
+.description p {
+  text-align: center;
+  width: 500px;
+}
+.search-bar {
+  text-align: center;
+}
+main section img {
+  text-align: center;
+  width: 150px;
+  height: 100px;
+}
+footer {
+  text-align: center;
+  background-color: aquamarine;
+}
+footer p {
+  text-decoration-color: blueviolet;
+  width: 500px;
+}
