@@ -1,0 +1,94 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+header {
+  background-color: aquamarine;
+}
+header nav {
+  text-align: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul li {
+  margin: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  text-decoration-color: blueviolet;
+}
+header nav ul li a:hover {
+  background-color: #17b042;
+}
+main {
+  text-align: center;
+}
+main h1 {
+  text-align: center;
+  /* border: 2px solid red; */
+  padding: 10 px;
+  margin: 10px 0;
+}
+main .description p {
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+}
+main .description h3,
+main .description h4 {
+  margin-bottom: 10px;
+}
+main .search-bar {
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .search-bar input {
+  border: 1px solid #1adbce;
+  padding: 5px;
+  border-radius: 15px;
+}
+main .search-bar button {
+  padding: 3px;
+  border: 1px solid #1adbce;
+  border-radius: 10px;
+  font-weight: 500;
+}
+main .search-bar button:hover {
+  cursor: pointer;
+  background-color: #17b042;
+}
+main .images {
+  margin: 20 px;
+  width: 250px;
+  height: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+main .images:hover {
+  scale: 1.2;
+}
+main .addresses ul li {
+  text-decoration: none;
+}
+footer {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: aquamarine;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+footer p {
+  text-decoration-color: blueviolet;
+  width: 500px;
+}
