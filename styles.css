@@ -13,7 +13,7 @@ header nav ul {
   list-style-type: none;
   height: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 header nav ul li {
@@ -70,6 +70,8 @@ main .images {
   height: 200px;
   text-align: center;
   border-radius: 10px;
+  object-fit: cover;
+  vertical-align: bottom;
 }
 main .images:hover {
   scale: 1.2;
