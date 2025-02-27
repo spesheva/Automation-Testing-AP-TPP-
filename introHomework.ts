@@ -15,9 +15,9 @@ console.log(`Is the number ${num} even?`, isEven);
 // Step 3: Log the result
 
 let text: string = "I love mountains";
-let textLenght: number = text.length;
-let isLong: boolean = textLenght > 10;
-console.log(`Is the lenght of the text - ${textLenght} is grater than 10? - `, isLong );
+//let textLenght: number = text.length;
+let isLong: boolean = text.length > 10;
+console.log(`Is the lenght of the text } is grater than 10? - `, isLong );
 
 
 // Exercise 3: Verify if a number is positive
@@ -25,9 +25,9 @@ console.log(`Is the lenght of the text - ${textLenght} is grater than 10? - `, i
 // Step 2: Declare a variable `isPositive` and check if `number` is greater than 0.
 // Step 3: Log the result
 
-let nuMber: number = 15;
-let isPositive: boolean = nuMber > 0;
-console.log(`Is the number ${nuMber} positive? -`, isPositive);
+let number: number = 15;
+let isPositive: boolean = number > 0;
+console.log(`Is the number ${number} positive? -`, isPositive);
 
 
 // Exercise 4: Determine if a number is negative or zero
@@ -35,9 +35,9 @@ console.log(`Is the number ${nuMber} positive? -`, isPositive);
 // Step 2: Declare a variable `isNonPositive` and check if `numCheck` is less than or equal to 0.
 // Step 3: Log the result
 
-let numCheck: number = -10;
-let isNonPositive: boolean = numCheck <= 0;
-console.log(`Is the number ${numCheck} non positive? - `, isNonPositive);
+let numcheck: number = -10;
+let isNonPositive: boolean = numcheck <= 0;
+console.log(`Is the number ${numcheck} non positive? - `, isNonPositive);
 
 // Exercise 5: Check if a string is empty
 // Step 1: Declare a variable `message` and assign any string to it.
