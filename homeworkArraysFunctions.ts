@@ -80,3 +80,35 @@ function findLargest(min: number, middle: number, largest: number) :number{
 
 let largestNum: number = findLargest(3,1,2);
 console.log("largestNum",largestNum);
+
+// 9.	Write a function “convertToCentimeters”  which receives parameter “inches” 
+// and add default value it and convert to centimeters. Log the result with default parameter and with passed parameter.
+
+function convertToCentimeters(inches: number=1) :number{
+          return inches*2.54;
+}
+let inchToCmConversion: number = convertToCentimeters();
+console.log(`The default value for inch in function convertToCentimeters is 1, for that 1 inch is ${inchToCmConversion} cm.`);
+let inches: number = 10;
+inchToCmConversion = convertToCentimeters(inches);
+console.log(`${inches} inch are ${inchToCmConversion} cm.`);
+
+
+
+// 10.	Write a function named “calculateArea” that takes a required width parameter and an optional height parameter.
+//  If height is not provided, assume the shape is a square.
+
+function calculateArea( width: number, height?: number): number{
+
+    if(height !== undefined){
+        return width * height;
+    }else {
+       return  width*width;
+    }
+
+}
+let area: number = calculateArea(4);
+console.log(`The area of a square is ${area}`);
+
+area = calculateArea(4,2);
+console.log(`The area of a rectangle is ${area}`);
