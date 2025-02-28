@@ -11,9 +11,10 @@ console.log("fruits", fruits);
 numberArray.pop();
 console.log("numberArray", numberArray);
 fruits.shift();
-console.log("fruits", fruits);
+console.log("fruits shift", fruits);
 
 numberArray.unshift(5);
+console.log(numberArray);
 
 console.log(fruits.slice(1, 4));
 
@@ -21,7 +22,7 @@ let multiplyNumbers = numberArray.map((element: number) => element * 2);
 
 let multipluSprcialNumbers = numberArray.map((element: number) => {
   if (element > 2) {
-    element * 2;
+    return element * 2;
   } else {
     return element;
   }

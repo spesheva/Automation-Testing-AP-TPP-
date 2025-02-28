@@ -100,3 +100,4 @@ if (age<40){
 
     const personNameInfo: personInfoType = "Ivan";
     const personAgeInfo: personInfoType = 15;
+   //export {};
