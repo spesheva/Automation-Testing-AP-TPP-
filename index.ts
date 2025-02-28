@@ -57,7 +57,7 @@ const isPositiveNum  = 5 >0 ? "The number is positive" : "The number is negative
 
 console.log(typeof isPositiveNum);//type of variable
 
-const age: number =30;
+const age: number = 30;
 const myName: string = "Pesho";
 const personDescription: string = age < 40
 ? `${myName} is younger than 40. He is  ${age} years old.`
