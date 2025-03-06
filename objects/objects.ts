@@ -47,7 +47,7 @@ const car: Cars = {
     return "Start the engine";
   },
 };
-console.log(car);
+console.log(car.startEngine());
 
 //get object keys
 const keys = Object.keys(car);
