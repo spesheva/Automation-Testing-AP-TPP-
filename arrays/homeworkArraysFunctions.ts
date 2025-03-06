@@ -9,35 +9,40 @@ console.log("bookGenre", bookGenre);
 //2.	Create an array of numbers and remove the first element from the array. Log the result.
 
 let numberArray: number[] = [15,20,25,30,35];
-numberArray.pop();
+// numberArray.pop();
+numberArray.shift()
+
 console.log("numberArray", numberArray);
 
 //3.	 Use the map method to create a new array and divide each number by 2  “num / 2”   from [1, 2, 3, 4, 5].  Log the result.
 
 let baseNumArr: number []= [1,2,3,4,5];
-function numdivision(element:number) :number {
-    return element/2;    
-}
-let mapedNumArrFunc = baseNumArr.map(numdivision);
-console.log("mapedNumArrFunc",mapedNumArrFunc);
+// function numdivision(element:number) :number {
+//     return element/2;    
+// }
+// let mapedNumArrFunc = baseNumArr.map(numdivision);
+// console.log("mapedNumArrFunc",mapedNumArrFunc);
 
-let mappedNumArr = baseNumArr.map((element:number) => element/2);
-console.log("mappedNumArr", mappedNumArr)
+// let mappedNumArr = baseNumArr.map((element:number) => element/2);
+let mappedNumArr:number []  = baseNumArr.map(num => num/2)
+ console.log("mappedNumArr", mappedNumArr);
+
 
 //4.	 Use the filter method to create a new array containing only numbers greater than 5 from [3, 7, 1, 9, 12, 4]. Log the result.
 
 let noFilteredNumArr: number [] = [3, 7, 1, 9, 12, 4];
-let filteredNumArr= noFilteredNumArr.filter((element: number) => (element > 5 ? element : 0));
-console.log("filteredNumArr", filteredNumArr);
+// let filteredNumArr= noFilteredNumArr.filter((element: number) => (element > 5 ? element : 0));
+// console.log("filteredNumArr", filteredNumArr);
 
-function compareNumbers(element:number) :number {
-    if (element > 5){
-         return element;
-    }else{
-        return 0;
-    }      
-}
-let compareFilterNumArr = noFilteredNumArr.filter(compareNumbers);
+// function compareNumbers(element:number) :number {
+//     if (element > 5){
+//          return element;
+//     }else{
+//         return 0;
+//     }      
+// }
+// let compareFilterNumArr = noFilteredNumArr.filter(compareNumbers);
+let compareFilterNumArr = noFilteredNumArr.filter(num=> num>5);
 console.log("compareFilterNumArr",compareFilterNumArr);
 
 //5.	Use the sort method to sort an array of numbers [9, 3, 7, 2, 8, 5] in ascending order. Log the result.
