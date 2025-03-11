@@ -92,3 +92,11 @@ console.log("studentNames", studentNames);
 // Exercise Three
 // Declare a function "sortStudents" that receive students array result from the previous exercise
 // and sort them by ascending
+function sortStudents(students: String[]){
+  return students.sort() ;
+}
+const studentNamesAsc = sortStudents(studentNames);
+
+console.log("sortStudents", studentNamesAsc);
+
+
