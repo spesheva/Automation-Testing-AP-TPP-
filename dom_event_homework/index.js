@@ -38,8 +38,6 @@ if (sectionContent) {
             sectionContent.style.boxShadow = "12px 12px 2px 1px rgba(0, 0, 255, 0.2)";
         }
     });
-}
-if (sectionContent) {
     sectionContent.addEventListener("mouseout", function () {
         if (sectionContent) {
             sectionContent.style.boxShadow = "";

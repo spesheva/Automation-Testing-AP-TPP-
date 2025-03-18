@@ -50,12 +50,11 @@ if(sectionContent){
         if(sectionContent){
             sectionContent.style.boxShadow = "12px 12px 2px 1px rgba(0, 0, 255, 0.2)";
         }
-    })
+    });
+        sectionContent.addEventListener("mouseout",()=>{
+            if(sectionContent){
+                sectionContent.style.boxShadow = "";
+            }
+    });
 }
-if(sectionContent){
-    sectionContent.addEventListener("mouseout",()=>{
-        if(sectionContent){
-            sectionContent.style.boxShadow = "";
-        }
-    })
-}
+ 
