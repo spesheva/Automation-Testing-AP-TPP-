@@ -34,9 +34,12 @@ test.describe("Playwright home page testing", () => {
     const checkboxOne = page.locator("xpath=//input[@value='cb1']");
     const checkboxTwo = page.locator("xpath=//input[@value='cb2']");
     const checkboxTree = page.locator("xpath=//input[@value='cb3']");
-    await checkboxOne.uncheck();
-    await checkboxTwo.uncheck();
-    await checkboxTree.uncheck();
+    if (await checkboxOne.isChecked()) {
+      await checkboxOne.uncheck();
+    }
+    if (await checkboxTwo.isChecked()) {
+      await checkboxTwo.uncheck();
+    }
     await checkboxTwo.check();
     expect(await page.isChecked("xpath=//input[@value='cb1']")).toBeFalsy();
     expect(await page.isChecked("xpath=//input[@value='cb3']")).toBeFalsy();
