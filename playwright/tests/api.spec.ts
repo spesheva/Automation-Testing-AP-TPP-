@@ -11,21 +11,21 @@ test.describe("Matchers example", async () => {
     expect(users).toContainEqual({ id: 1, name: "Alice" });
   });
 
-  await test.step("toEqual example", async () => {
-    await expect({ name: "Alice", age: 30 }).toEqual({
+  test("toEqual example", async () => {
+    expect({ name: "Alice", age: 30 }).toEqual({
       name: "Alice",
       age: 30,
     });
   });
-  await test.step("toMatchObject Example", async () => {
+  test("toMatchObject Example", async () => {
     const user = {
       id: 1,
       name: "Alice",
       age: 30,
     };
-    expect(user).toMatchObject({ name: "Alice" });
+    expect(user).toMatchObject({ name: "Alice", age: 30 });
   });
-  await test.step("toHaveProperty example", async () => {
+  test("toHaveProperty example", async () => {
     const user = {
       profile: {
         name: "Alice",
@@ -35,11 +35,7 @@ test.describe("Matchers example", async () => {
     expect(user).toHaveProperty("profile.name", "Alice");
   });
 });
-
-test.describe("Test exceptions page tests", () => {
-  test.beforeEach("Navigate to the test page", async ({ page }) => {
-    await page.goto(REQUEST_URL);
-  });
+test.describe("CRUD Operations", () => {
   test("API Test - GET Product", async ({ request }) => {
     const response = await request.get(REQUEST_URL);
     const responseBody = await response.json();
@@ -51,39 +47,25 @@ test.describe("Test exceptions page tests", () => {
       })
     );
   });
-  test("API Test - GET Product properties ", async ({ request }) => {
-    const response = await request.get(REQUEST_URL);
+  test("API TEST 2 - GET Product", async ({ request }) => {
+    const response = await request.get(`${REQUEST_URL}/${PRODUCT_ID}`);
+
     const responseBody = await response.json();
-    await expect(response.ok()).toBeTruthy();
-    await expect(response.status()).toBe(200);
-    await expect(responseBody).toContainEqual(
-      await expect.objectContaining({
-        price: 55.99,
-        title: "Mens Cotton Jacket",
-        description:
-          "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-        category: "men's clothing",
-        image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      })
-    );
-  });
-});
-test.describe("CRUD Operations", () => {
-  test("API Test - GET Product2", async ({ request }) => {
-    const requestURL = `${REQUEST_URL}/${PRODUCT_ID}`;
-    const response = await request.get(requestURL);
-    const responseBody = await response.json();
+
     expect(response.ok()).toBeTruthy();
+
     expect(response.status()).toBe(200);
+
     expect(responseBody).toEqual(
       expect.objectContaining({
-        title: "Solid Gold Petite Micro",
+        title: "Solid Gold Petite Micropave ",
       })
     );
     expect(responseBody).toMatchObject({ price: 168, category: "jewelery" });
     expect(responseBody).toHaveProperty("image");
     expect(responseBody).toHaveProperty("rating.rate");
   });
+
   test("API Test 3 - CREATE Product", async ({ request }) => {
     const response = await request.post(REQUEST_URL, {
       // data: REQUEST_BODY,
@@ -102,37 +84,40 @@ test.describe("CRUD Operations", () => {
     console.log(response.status());
     expect(response.status()).toBe(200);
     expect(responseBody).toEqual({
-      id: 0,
+      id: 21,
       title: "string",
       price: 0.1,
       description: "string",
       category: "string",
       image: "http://example.com",
     });
-    expect(responseBody).toHaveProperty("price", 0.01);
+    expect(responseBody).toHaveProperty("price", 0.1);
   });
-  test("API Test 4 - UPDATE PTODUCT", async ({ request }) => {
+  test("API Test 4 - UPDATE Product", async ({ request }) => {
     const response = await request.put(`${REQUEST_URL}/${PRODUCT_ID}`, {
       data: {
-        id: 8,
-        title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-        price: 10.99,
-        description:
-          "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-        category: "jewelery",
-        image:
-          "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-        rating: {
-          rate: 1.9,
-          count: 100,
-        },
+        id: 6,
+        title: "Test",
+        price: 0.3,
+        description: "Test",
+        category: "string",
+        image: "http://example.com",
       },
     });
     const responseBody = await response.json();
     console.log(responseBody);
+    expect(response.ok()).toBeTruthy();
+
+    expect(response.status()).toBe(200);
+
+    expect(responseBody).toMatchObject({
+      title: "Test",
+      price: 0.3,
+      description: "Test",
+    });
   });
 
-  test("API Test 5 - DELETE PTODUCT", async ({ request }) => {
+  test("API Test 5 - DELETE Product", async ({ request }) => {
     const response = await request.delete(`${REQUEST_URL}/${PRODUCT_ID}`);
     const responseBody = await response.json();
     console.log(responseBody);
